@@ -9,3 +9,4 @@ router.get('/', authMiddleware_1.protect, ideaController_1.listIdeas);
 router.put('/:id', authMiddleware_1.protect, ideaController_1.updateIdea);
 router.delete('/:id', authMiddleware_1.protect, ideaController_1.deleteIdea);
 exports.default = router;
+//# sourceMappingURL=ideaRoutes.js.map

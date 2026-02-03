@@ -29,3 +29,4 @@ const updateSettings = async (req, res) => {
     }
 };
 exports.updateSettings = updateSettings;
+//# sourceMappingURL=settingsController.js.map

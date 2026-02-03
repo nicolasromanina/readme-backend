@@ -62,3 +62,4 @@ const getMoods = async (req, res) => {
     }
 };
 exports.getMoods = getMoods;
+//# sourceMappingURL=moodController.js.map

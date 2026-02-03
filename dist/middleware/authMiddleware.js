@@ -39,3 +39,4 @@ const protect = async (req, res, next) => {
     return res.status(401).json({ error: 'Not authorized, no token' });
 };
 exports.protect = protect;
+//# sourceMappingURL=authMiddleware.js.map

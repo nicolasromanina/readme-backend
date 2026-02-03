@@ -7,3 +7,4 @@ const MoodSchema = new mongoose_1.Schema({
     notes: { type: String },
 }, { timestamps: true });
 exports.default = (0, mongoose_1.model)('Mood', MoodSchema);
+//# sourceMappingURL=Mood.js.map

@@ -7,3 +7,4 @@ const router = (0, express_1.Router)();
 router.post('/', authMiddleware_1.protect, moodController_1.addMood);
 router.get('/', authMiddleware_1.protect, moodController_1.getMoods);
 exports.default = router;
+//# sourceMappingURL=moodRoutes.js.map

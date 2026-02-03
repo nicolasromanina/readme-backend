@@ -10,3 +10,4 @@ router.get('/:id', authMiddleware_1.protect, journalController_1.getEntry);
 router.put('/:id', authMiddleware_1.protect, journalController_1.updateEntry);
 router.delete('/:id', authMiddleware_1.protect, journalController_1.deleteEntry);
 exports.default = router;
+//# sourceMappingURL=journalRoutes.js.map

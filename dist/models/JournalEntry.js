@@ -8,3 +8,4 @@ const JournalEntrySchema = new mongoose_1.Schema({
     mood: { type: String },
 }, { timestamps: true });
 exports.default = (0, mongoose_1.model)('JournalEntry', JournalEntrySchema);
+//# sourceMappingURL=JournalEntry.js.map

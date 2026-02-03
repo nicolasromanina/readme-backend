@@ -9,3 +9,4 @@ const IdeaSchema = new mongoose_1.Schema({
     status: { type: String, enum: ['open', 'done'], default: 'open' },
 }, { timestamps: true });
 exports.default = (0, mongoose_1.model)('Idea', IdeaSchema);
+//# sourceMappingURL=Idea.js.map

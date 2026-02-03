@@ -78,3 +78,4 @@ const getProfile = async (req, res) => {
     res.json({ _id: user._id, pseudo: user.pseudo, email: user.email });
 };
 exports.getProfile = getProfile;
+//# sourceMappingURL=userController.js.map

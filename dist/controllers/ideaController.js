@@ -81,3 +81,4 @@ const deleteIdea = async (req, res) => {
     }
 };
 exports.deleteIdea = deleteIdea;
+//# sourceMappingURL=ideaController.js.map

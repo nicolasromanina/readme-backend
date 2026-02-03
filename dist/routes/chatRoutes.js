@@ -9,3 +9,4 @@ router.get('/messages', authMiddleware_1.protect, chatController_1.listMessages)
 router.post('/save', authMiddleware_1.protect, chatController_1.saveMessage);
 router.delete('/messages', authMiddleware_1.protect, chatController_1.clearMessages);
 exports.default = router;
+//# sourceMappingURL=chatRoutes.js.map

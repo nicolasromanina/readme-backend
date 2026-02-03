@@ -155,3 +155,4 @@ const clearMessages = async (req, res) => {
     }
 };
 exports.clearMessages = clearMessages;
+//# sourceMappingURL=chatController.js.map

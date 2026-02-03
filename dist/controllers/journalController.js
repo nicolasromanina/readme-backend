@@ -139,3 +139,4 @@ const deleteEntry = async (req, res) => {
     }
 };
 exports.deleteEntry = deleteEntry;
+//# sourceMappingURL=journalController.js.map
