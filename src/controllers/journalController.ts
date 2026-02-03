@@ -9,7 +9,12 @@ export const createEntry = async (req: AuthRequest, res: Response) => {
   if (!content) return res.status(400).json({ error: 'content is required' });
 
   try {
-    const entry = await JournalEntry.create({ userId, title, content, mood });
+    const entry = await JournalEntry.create({ 
+      userId: userId as any, 
+      title, 
+      content, 
+      mood 
+    });
     const transformed = {
       id: entry._id.toString(),
       user_id: entry.userId.toString(),
@@ -31,7 +36,10 @@ export const listEntries = async (req: AuthRequest, res: Response) => {
   if (!userId) return res.status(401).json({ error: 'Not authenticated' });
 
   try {
-    const entries = await JournalEntry.find({ userId }).sort({ createdAt: -1 }).limit(100);
+    const entries = await JournalEntry.find({ userId: userId as any })
+      .sort({ createdAt: -1 })
+      .limit(100);
+    
     const transformed = entries.map(entry => ({
       id: entry._id.toString(),
       user_id: entry.userId.toString(),
@@ -54,8 +62,13 @@ export const getEntry = async (req: AuthRequest, res: Response) => {
   if (!userId) return res.status(401).json({ error: 'Not authenticated' });
 
   try {
-    const entry = await JournalEntry.findOne({ _id: id, userId });
+    const entry = await JournalEntry.findOne({ 
+      _id: id as any, 
+      userId: userId as any 
+    });
+    
     if (!entry) return res.status(404).json({ error: 'Not found' });
+    
     const transformed = {
       id: entry._id.toString(),
       user_id: entry.userId.toString(),
@@ -78,8 +91,17 @@ export const updateEntry = async (req: AuthRequest, res: Response) => {
   if (!userId) return res.status(401).json({ error: 'Not authenticated' });
 
   try {
-    const updated = await JournalEntry.findOneAndUpdate({ _id: id, userId }, req.body, { new: true });
+    const updated = await JournalEntry.findOneAndUpdate(
+      { 
+        _id: id as any, 
+        userId: userId as any 
+      }, 
+      req.body, 
+      { new: true }
+    );
+    
     if (!updated) return res.status(404).json({ error: 'Not found' });
+    
     const transformed = {
       id: updated._id.toString(),
       user_id: updated.userId.toString(),
@@ -102,7 +124,11 @@ export const deleteEntry = async (req: AuthRequest, res: Response) => {
   if (!userId) return res.status(401).json({ error: 'Not authenticated' });
 
   try {
-    const deleted = await JournalEntry.findOneAndDelete({ _id: id, userId });
+    const deleted = await JournalEntry.findOneAndDelete({ 
+      _id: id as any, 
+      userId: userId as any 
+    });
+    
     if (!deleted) return res.status(404).json({ error: 'Not found' });
     res.json({ success: true });
   } catch (error) {

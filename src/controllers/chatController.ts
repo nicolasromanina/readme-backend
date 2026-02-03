@@ -3,6 +3,8 @@ import { AuthRequest } from '../middleware/authMiddleware';
 import { getGroqChatCompletion } from '../services/groqService';
 import ChatMessage from '../models/ChatMessage';
 import User from '../models/User';
+import mongoose from 'mongoose';
+const ObjectId = mongoose.Types.ObjectId;
 
 interface ChatMessageInput {
   role: 'user' | 'assistant';

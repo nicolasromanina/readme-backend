@@ -10,7 +10,12 @@ export const addMood = async (req: AuthRequest, res: Response) => {
   if (!level || level < 1 || level > 5) return res.status(400).json({ error: 'level must be between 1 and 5' });
 
   try {
-    const entry = await Mood.create({ userId, level, notes });
+    const entry = await Mood.create({ 
+      userId: userId as any, 
+      level, 
+      notes 
+    });
+    
     const timestamp = entry.createdAt || new Date();
     const transformed = {
       id: entry._id.toString(),
@@ -32,7 +37,10 @@ export const getMoods = async (req: AuthRequest, res: Response) => {
   if (!userId) return res.status(401).json({ error: 'Not authenticated' });
 
   try {
-    const moods = await Mood.find({ userId }).sort({ createdAt: -1 }).limit(50);
+    const moods = await Mood.find({ userId: userId as any })
+      .sort({ createdAt: -1 })
+      .limit(50);
+    
     const transformed = moods.map(mood => {
       const timestamp = mood.createdAt || new Date();
       return {

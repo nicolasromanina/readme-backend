@@ -1,6 +1,8 @@
 import { AuthRequest } from '../middleware/authMiddleware';
 import { Request, Response } from 'express';
 import User from '../models/User';
+import mongoose from 'mongoose';
+const ObjectId = mongoose.Types.ObjectId;
 
 export const updateSettings = async (req: AuthRequest, res: Response) => {
   const userId = req.user?._id;

@@ -28,4 +28,4 @@ const ChatMessageSchema = new Schema<IChatMessage>(
   { timestamps: true }
 );
 
-export default model<IChatMessage>('ChatMessage', ChatMessageSchema);export default model<IChatMessage>('ChatMessage', ChatMessageSchema);
+export default model<IChatMessage>('ChatMessage', ChatMessageSchema);
