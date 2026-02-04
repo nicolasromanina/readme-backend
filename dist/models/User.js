@@ -18,6 +18,19 @@ const UserSchema = new mongoose_1.Schema({
     password: {
         type: String,
     },
+    gender: {
+        type: String,
+        enum: ['homme', 'femme'],
+    },
+    hair: {
+        type: Number,
+    },
+    style: {
+        type: Number,
+    },
+    traits: {
+        type: [String],
+    },
 });
 exports.default = (0, mongoose_1.model)('User', UserSchema);
 //# sourceMappingURL=User.js.map
