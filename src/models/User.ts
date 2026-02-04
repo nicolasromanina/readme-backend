@@ -5,6 +5,10 @@ export interface IUser extends Document {
   mood?: string;
   email?: string;
   password?: string;
+  gender?: 'homme' | 'femme';
+  hair?: number;
+  style?: number;
+  traits?: string[];
 }
 
 const UserSchema = new Schema<IUser>({
@@ -23,6 +27,19 @@ const UserSchema = new Schema<IUser>({
   },
   password: {
     type: String,
+  },
+  gender: {
+    type: String,
+    enum: ['homme', 'femme'],
+  },
+  hair: {
+    type: Number,
+  },
+  style: {
+    type: Number,
+  },
+  traits: {
+    type: [String],
   },
 });
 
